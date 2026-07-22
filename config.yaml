@@ -1,0 +1,63 @@
+# CV System Configuration
+# ======================
+
+# Languages to generate CVs in
+languages:
+  - es
+  - en
+
+# Default language for new content
+default_language: es
+
+# PDF generation settings
+pdf:
+  engine: pandoc          # pandoc | weasyprint
+  template: default       # LaTeX template name
+  paper_size: A4
+  margins:
+    top: 1.2cm
+    bottom: 1.2cm
+    left: 1.8cm
+    right: 1.8cm
+  font_size: 10pt         # 10pt for compact, 11pt for standard
+  compact: true           # true = fit in 1 page, false = standard layout
+
+# CV section order (sections not listed here won't be included)
+sections_order:
+  - header
+  - summary
+  - experience
+  - projects
+  - skills
+  - education
+  - certifications
+
+# Experience section settings
+experience:
+  max_items: 6            # Maximum number of experiences to include
+  max_highlights: 3       # Max bullet points per experience (compact: 3, standard: 5)
+  show_description: false # false = skip paragraph, true = include it
+  sort_by: relevance      # relevance | date
+  include_current: true
+
+# Skills section settings
+skills:
+  group_by: category      # category | level | none
+  max_items: 30           # Maximum skills to show
+  compact: true           # true = one line per category, false = one skill per line
+
+# Projects section settings
+projects:
+  max_items: 3
+  only_relevant: true     # Only include projects related to job requirements
+
+# ATS optimization
+ats:
+  use_plain_text: true    # Avoid special characters
+  use_standard_headers: true  # Use standard section names
+  include_keywords: true  # Auto-include matching keywords
+
+# Gap detection thresholds
+gaps:
+  warn_threshold: 0.5     # Warn if match is below 50%
+  critical_threshold: 0.3 # Critical if match is below 30%
