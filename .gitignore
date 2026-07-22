@@ -2,7 +2,8 @@
 # CV System - Gitignore
 #
 # ==========================================
-
+#-------Offers
+/offers/*.md
 # --- Knowledge base (profile, experience, skills, etc.) ---
 kb/*.yaml
 kb/**/*.yaml
